@@ -12,12 +12,12 @@ export default function SheetMenu() {
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden p-2 border border-border rounded-md"><RxHamburgerMenu /></SheetTrigger>
-      <SheetContent>
+      <SheetContent side="left">
         <SheetHeader className="mt-6">
           <div className="flex gap-x-4 p-2 border border-foreground/30 rounded-md">
             <div className="size-16 bg-secondary rounded-md inline-block"></div>
             <div className="grid text-left items-center">
-              <Link href="/" className="inline-block font-bold">FBK.</Link>
+              <Link href="/" className="inline-block font-bold">StudyMaterial.</Link>
               <Link className="text-xs inline-flex items-center gap-x-2 border border-secondary rounded-sm px-1" href="/">
                 <LuGithub />Source Code</Link>
             </div>
