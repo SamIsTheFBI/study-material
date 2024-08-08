@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/layout/theme-provider"
 import Header from "@/components/layout/header";
+import Dock from "@/components/layout/dock";
 
 export const metadata: Metadata = {
   title: "Study Material",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={cn(GeistSans.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
+          <Dock />
           {children}
         </ThemeProvider>
       </body>
