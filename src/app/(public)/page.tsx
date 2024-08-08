@@ -14,15 +14,15 @@ export default function Home() {
             <span>Changelog</span>
             <LuArrowRight className="ml-1 group-hover:ml-2 group-hover:translate-x-1 transition-all" />
           </Link>
-          <p className="text-3xl font-bold tracking-tighter md:text-5xl">
-            A generic template for Nextjs apps.
+          <p className="text-3xl font-bold tracking-tighter md:text-5xl max-w-7xl mx-auto">
+            Your one stop solution for sharing college notes.
           </p>
           <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-            I am trying to build a starter layout kind of thing for my Nextjs projects. This is going to be cool, trust me bro.
+            Start browsing by choosing your year.
           </p>
           <div className="inline-flex flex-wrap items-center gap-3">
-            <Button>Get Started</Button>
-            <Button variant="outline">Get Started</Button>
+            <Button>Browse Notes</Button>
+            <Button variant="outline">Start Uploading</Button>
           </div>
         </section>
       </main>
