@@ -13,7 +13,7 @@ export default async function Header() {
         <Link href="/" className="font-bold text-xl">
           StudyMaterial.
         </Link>
-        <div className="flex max-sm:hidden items-center gap-6 justify-between hidden">
+        <div className="flex max-sm:hidden items-center gap-6 justify-between">
           <Navbar />
         </div>
         <div className="flex items-center gap-x-2">

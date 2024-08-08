@@ -119,34 +119,32 @@ export default function UploadNotesForm() {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="branch"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Branch</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Choose year" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {courseObjs.map((course) => (
-                        <SelectItem value={course.value}>{course.label}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormDescription>
-                    Choose the proper branch your notes will provide benefit for.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            {
-              form.getValues().branch !== "1st Year"
-              &&
+            <div className="flex gap-x-6">
+              <FormField
+                control={form.control}
+                name="branch"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Branch</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose year" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {courseObjs.map((course) => (
+                          <SelectItem value={course.value}>{course.label}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormDescription>
+                      Choose the proper branch your notes will provide benefit for.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="year"
@@ -173,7 +171,7 @@ export default function UploadNotesForm() {
                   </FormItem>
                 )}
               />
-            }
+            </div>
             <Button type="submit">Submit</Button>
           </form>
         </Form>

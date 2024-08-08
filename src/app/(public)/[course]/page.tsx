@@ -5,12 +5,12 @@ import { FaGoogleDrive } from "react-icons/fa6";
 export default function Page({ params }: { params: { course: string } }) {
   return (
     <>
-      <main className="space-y-6 p-4 pb-24">
-        <h1 className="text-3xl font-bold text-center">Browsing through {params.course} notes...</h1>
-        <div className="mx-auto w-full max-w-2xl">
+      <main className="space-y-6 p-4 pb-24 mx-auto max-w-3xl">
+        <h1 className="text-3xl font-bold tracking-tighter md:text-4xl w-full">Browsing through {params.course} notes...</h1>
+        <div className="mx-auto w-full">
           <input type="text" className="w-full rounded-md h-8 px-2 border border-border" placeholder="Search here.." />
         </div>
-        <ul className="max-w-2xl mx-auto divide-y divide-border">
+        <ul className="mx-auto divide-y divide-border">
           {computerscience_3.map((notes) => (
             <li
               key={Math.random()}
