@@ -23,8 +23,12 @@ export default function Home() {
           <div className="inline-flex flex-wrap items-center gap-3">
             <Button asChild>
               <Link href="/branch">Browse Notes</Link>
-              </Button>
-            <Button variant="outline">Start Uploading</Button>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/dashboard">
+                Start Uploading
+              </Link>
+            </Button>
           </div>
         </section>
       </main>
