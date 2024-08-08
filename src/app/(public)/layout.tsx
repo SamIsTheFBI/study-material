@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(GeistSans.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
+          <div className="pb-12">
+            <Header />
+          </div>
           <Dock />
           {children}
         </ThemeProvider>
