@@ -134,7 +134,7 @@ export default function UploadNotesForm() {
                       </FormControl>
                       <SelectContent>
                         {courseObjs.map((course) => (
-                          <SelectItem value={course.value}>{course.label}</SelectItem>
+                          <SelectItem value={course.value} key={course.value}>{course.label}</SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
