@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+    grid-auto-rows: 1fr; /* Height will be adjusted to maintain square aspect ratio */
+    gap: 20px; /* Increased space between items */
+  }
+  
+  .element {
+    border: 2px dashed coral;
+    background-color: lightseagreen;
+    aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio for square shape */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    background-size: cover; /* Ensure the image covers the entire card */
+    background-position: center; /* Center the background image */
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+  }
+  

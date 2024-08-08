@@ -21,7 +21,9 @@ export default function Home() {
             Start browsing by choosing your year.
           </p>
           <div className="inline-flex flex-wrap items-center gap-3">
-            <Button>Browse Notes</Button>
+            <Button asChild>
+              <Link href="/branch">Browse Notes</Link>
+              </Button>
             <Button variant="outline">Start Uploading</Button>
           </div>
         </section>
