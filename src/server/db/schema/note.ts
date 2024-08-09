@@ -4,6 +4,6 @@ import { users } from "./auth";
 export const notes = pgTable("note", {
   id: text("id").primaryKey(),
   uploaderId: text("uploader_id").notNull().references(() => users.id, { onDelete: 'cascade' }),
-  driveLink: text("drive_link"),
+  publicLink: text("public_link"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 })

@@ -35,11 +35,26 @@ export async function GET(request: Request): Promise<Response> {
     });
     const googleUser: GoogleUser = await googleUserResponse.json();
 
+    console.log(googleUser)
+    const googlePfpLink = googleUser?.picture || ''
+
+    insert(users).values({
+      id: userId,
+      name: googleUser.name,
+      email: googleUser.email,
+    })
     // Replace this with your own DB client.
     const [existingUser] = await db.select().from(users).where(eq(users.email, googleUser.email))
 
-    console.log("Exisitng user?", existingUser)
     if (existingUser) {
+      try {
+        await db.update(users)
+          .set({ googlePfp: googlePfpLink })
+          .where(eq(users.id, existingUser.id))
+      } catch (e) {
+        console.log("Failed to update user picture!")
+      }
+
       const session = await lucia.createSession(existingUser.id, {});
       const sessionCookie = lucia.createSessionCookie(session.id);
       cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
@@ -60,6 +75,7 @@ export async function GET(request: Request): Promise<Response> {
         id: userId,
         name: googleUser.name,
         email: googleUser.email,
+        googlePfp: googleUser.picture,
       })
     } catch (e) {
       return new Response(null, {
@@ -96,5 +112,6 @@ interface GoogleUser {
   sub: string;
   name: string;
   email: string;
+  picture: string;
 }
 
