@@ -38,11 +38,6 @@ export async function GET(request: Request): Promise<Response> {
     console.log(googleUser)
     const googlePfpLink = googleUser?.picture || ''
 
-    insert(users).values({
-      id: userId,
-      name: googleUser.name,
-      email: googleUser.email,
-    })
     // Replace this with your own DB client.
     const [existingUser] = await db.select().from(users).where(eq(users.email, googleUser.email))
 
@@ -62,7 +57,7 @@ export async function GET(request: Request): Promise<Response> {
       return new Response(null, {
         status: 302,
         headers: {
-          Location: "/"
+          Location: "/dashboard"
         }
       });
     }
@@ -91,7 +86,7 @@ export async function GET(request: Request): Promise<Response> {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/"
+        Location: "/dashboard"
       }
     });
   } catch (e) {

@@ -38,5 +38,5 @@ export const genericError = { error: 'Error, please try again.' }
 
 export const setAuthCookie = (cookie: Cookie) => {
   cookies().set(cookie.name, cookie.value, cookie.attributes); // <- suggested approach from the docs, but does not work with `next build` locally
-  // cookies().set(cookie);
+  cookies().set(cookie);
 }

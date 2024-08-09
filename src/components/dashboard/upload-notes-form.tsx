@@ -17,6 +17,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+import { useToast } from "../ui/use-toast"
+import { uploadNotesLink } from "@/server/actions/noteSharingActions"
 
 const courseObjs = [
   {
@@ -28,7 +30,7 @@ const courseObjs = [
     label: "Civil",
   },
   {
-    value: "computercience",
+    value: "computerscience",
     label: "Computer Science",
   },
   {
@@ -53,16 +55,14 @@ const courseObjs = [
   },
 ]
 
-const courseNames = courseObjs.map((course) => course.label)
-
 const formSchema = z.object({
   title: z.string().min(2).max(90),
   link: z.string().min(2),
   year: z.enum(['1', '2', '3', '4']),
-  branch: z.enum(['1st Year', 'Civil', 'Computer Science', 'Electrical', 'Electronics & Communication', 'Electronics & Instrumentation', 'Mechanical', 'Production'])
+  branch: z.enum(['all_1', 'civil', 'computerscience', 'electrical', 'ece', 'ei', 'mechanical', 'production'])
 })
 
-export default function UploadNotesForm() {
+export default function UploadNotesForm({ userId }: { userId: string }) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,11 +71,28 @@ export default function UploadNotesForm() {
       year: "1",
     },
   })
-  function onSubmit(values: z.infer<typeof formSchema>) {
+
+  const { toast } = useToast()
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
+    const res = await uploadNotesLink(values, userId)
+
+    if (res?.error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: res.error,
+      })
+    } else {
+      toast({
+        title: `You shared a note! Thanks!`,
+        description: `Uploaded the link to ` + values.title,
+      })
+    }
   }
+
   return (
     <Card className="border border-border max-sm:shadow-none">
       <CardHeader className="space-y-1">
@@ -129,7 +146,7 @@ export default function UploadNotesForm() {
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Choose year" />
+                          <SelectValue placeholder="Choose branch" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>

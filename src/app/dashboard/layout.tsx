@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/layout/theme-provider"
 import Header from "@/components/layout/header";
 import { checkAuth } from "@/server/auth/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Study Material",
@@ -25,6 +26,7 @@ export default async function RootLayout({
             <Header />
           </div>
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

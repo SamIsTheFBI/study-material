@@ -16,7 +16,7 @@ const courses = [
   },
   {
     year: 2,
-    value: "computercience_2",
+    value: "computerscience_2",
     label: "Computer Science (2nd year)",
   },
   {
@@ -56,7 +56,7 @@ const courses = [
   },
   {
     year: 3,
-    value: "computercience_3",
+    value: "computerscience_3",
     label: "Computer Science (3rd year)",
   },
   {
@@ -96,7 +96,7 @@ const courses = [
   },
   {
     year: 4,
-    value: "computercience_4",
+    value: "computerscience_4",
     label: "Computer Science (4th year)",
   },
   {

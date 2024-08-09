@@ -5,10 +5,7 @@ import { Button } from "../ui/button"
 import { useFormStatus } from "react-dom";
 
 export default function SignOutButton() {
-  const { pending } = useFormStatus();
   return (
-    <form action={signOutAction}>
-      <Button variant="destructive" disabled={pending}>Sign Out</Button>
-    </form>
+    <Button variant="destructive" onClick={async () => await signOutAction()}>Sign Out</Button>
   )
 }

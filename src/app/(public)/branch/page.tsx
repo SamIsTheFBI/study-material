@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '@/styles/App.css'; 
+import '@/styles/App.css';
 
 // const images = Array.from({ length: 12 }, (_, index) => 'url(/assets/${index + 1}.png)');
 
@@ -37,15 +37,15 @@ const images = Array.from({ length: 20 }, (_, index) => `url(/assets/${index + 1
 
 const BranchPage: React.FC = () => {
   return (
-    <ul className='grid grid-cols-4 gap-x-14 gap-y-5 max-w-7xl mx-auto'>
-    {branchcode.map((code) => (
-      <li key={code.code} className='aspect-square w-80'>
-        <Link href={`/branch/semester?branch=${code.code}`}>
-          <img src={code.img} alt={code.code} className='w-full h-full object-cover' />
-        </Link>
-      </li>
-    ))}
-  </ul>
+    <ul className='grid grid-cols-4 gap-x-14 gap-y-5 max-w-7xl mx-auto pb-20'>
+      {branchcode.map((code) => (
+        <li key={code.code} className='aspect-square w-80'>
+          <Link href={`/branch/semester?branch=${code.code}`}>
+            <img src={code.img} alt={code.code} className='w-full h-full object-cover' />
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 };
 
