@@ -43,7 +43,7 @@ export default function Home() {
         </section>
         <section className="max-w-3xl mx-auto space-y-4">
           <h2 className="text-xl tracking-tighter font-bold">Top contributors</h2>
-          <Table className="border border-border">
+          <Table className="border border-border bg-background">
             <TableHeader>
               <TableRow>
                 <TableHead className="w-6">#</TableHead>

@@ -52,7 +52,7 @@ export default async function Page() {
       </div>
       <div className="lg:gap-4 max-lg:space-y-4 py-3 lg:flex lg:max-h-[600px]">
         <UploadNotesForm userId={session.user.id} />
-        <div className="border border-border lg:max-w-xs w-full rounded-md p-4 shadow-sm lg:max-h-[600px] lg:overflow-y-auto">
+        <div className="border border-border lg:max-w-xs w-full rounded-md p-4 shadow-sm lg:max-h-[600px] lg:overflow-y-auto bg-background z-50">
           <h2 className="pb-3">Your contribution: </h2>
           <ul id="contrib" className="divide-y divide-border">
             {notesUploaded.length > 0 && notesUploaded.map((note) => (

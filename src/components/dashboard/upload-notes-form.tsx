@@ -94,7 +94,7 @@ export default function UploadNotesForm({ userId }: { userId: string }) {
   }
 
   return (
-    <Card className="border border-border max-sm:shadow-none">
+    <Card className="border border-border max-sm:shadow-none bg-background z-50">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">Share your notes</CardTitle>
         <CardDescription>
