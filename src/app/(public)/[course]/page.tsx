@@ -4,7 +4,6 @@ import { getNotesByBranchCode } from "@/server/actions/noteSharingActions";
 
 export default async function Page({ params }: { params: { course: string } }) {
   const branchNotes = await getNotesByBranchCode(params.course)
-  console.log(branchNotes)
 
   return (
     <>

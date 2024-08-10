@@ -41,7 +41,7 @@ export default function Home() {
             </Button>
           </div>
         </section>
-        <section className="max-w-3xl mx-auto space-y-4">
+        <section className="max-w-3xl mx-auto space-y-4 hidden">
           <h2 className="text-xl tracking-tighter font-bold">Top contributors</h2>
           <Table className="border border-border bg-background">
             <TableHeader>
