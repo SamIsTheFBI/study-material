@@ -31,7 +31,7 @@ export default function RootLayout({
             y={-1}
             strokeDasharray={"4 2"}
             className={cn(
-              "[mask-image:linear-gradient(to_top,white,transparent,transparent)] fixed",
+              "[mask-image:linear-gradient(to_top,white,transparent,transparent)] fixed -z-10",
             )}
           />
           <Dock />

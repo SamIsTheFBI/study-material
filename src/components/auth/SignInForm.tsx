@@ -10,7 +10,7 @@ const SignInForm = () => {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Sign In</CardTitle>
           <CardDescription>
-            to continue to StudyMaterial
+            to continue to PadhaiKarle.
           </CardDescription>
         </CardHeader>
         <div className="px-6 pb-4">

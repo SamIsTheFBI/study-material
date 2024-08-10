@@ -28,7 +28,7 @@ export default function Home() {
             Your one stop solution for sharing college notes.
           </p>
           <p className="text-muted-foreground mx-auto">
-            Start by choosing your year from the dock on the bottom of your screen.
+            Start by choosing your year/branch from the dock on the bottom of your screen.
           </p>
           <div className="inline-flex flex-wrap items-center gap-3">
             <Button asChild>

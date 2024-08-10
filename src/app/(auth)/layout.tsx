@@ -20,9 +20,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(GeistSans.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="pb-12">
-            <Header />
-          </div>
           <GridPattern
             width={40}
             height={40}
@@ -30,7 +27,7 @@ export default function RootLayout({
             y={-1}
             strokeDasharray={"4 2"}
             className={cn(
-              "[mask-image:linear-gradient(to_top,white,transparent,transparent)] fixed",
+              "[mask-image:linear-gradient(to_top,white,transparent,transparent)] fixed -z-10",
             )}
           />
           {children}

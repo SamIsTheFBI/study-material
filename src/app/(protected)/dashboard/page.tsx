@@ -1,5 +1,6 @@
 import SignOutButton from "@/components/auth/SignOutButton"
 import UploadNotesForm from "@/components/dashboard/upload-notes-form"
+import NotFound from "@/components/layout/not-found"
 import { Button } from "@/components/ui/button"
 import { getPfpByUserId } from "@/server/actions/authActions"
 import { getNotesByUserId } from "@/server/actions/noteSharingActions"
@@ -14,9 +15,7 @@ export default async function Page() {
   const { session } = await getUserAuth()
 
   if (!session) {
-    return (
-      <div>404</div>
-    )
+    return <NotFound />
   }
 
   const pfp = await getPfpByUserId(session.user.id)

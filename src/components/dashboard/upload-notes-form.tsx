@@ -12,7 +12,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -116,7 +115,6 @@ export default function UploadNotesForm({ userId }: { userId: string }) {
                   <FormDescription>
                     Give a descriptive title for your notes.
                   </FormDescription>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -132,7 +130,6 @@ export default function UploadNotesForm({ userId }: { userId: string }) {
                   <FormDescription>
                     Upload your notes to a cloud service (Google Drive, MEGA, OneDrive, etc.) & provide a public URL of it.
                   </FormDescription>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -158,7 +155,6 @@ export default function UploadNotesForm({ userId }: { userId: string }) {
                     <FormDescription>
                       Choose the proper branch your notes will provide benefit for.
                     </FormDescription>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -184,7 +180,6 @@ export default function UploadNotesForm({ userId }: { userId: string }) {
                     <FormDescription>
                       Choose the year for which the notes apply.
                     </FormDescription>
-                    <FormMessage />
                   </FormItem>
                 )}
               />

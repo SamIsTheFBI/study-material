@@ -1,7 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
-
   return (
     <>
       <main className="space-y-6 p-4 pb-24 mx-auto max-w-3xl">

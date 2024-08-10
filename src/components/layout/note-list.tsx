@@ -40,9 +40,10 @@ export default function NoteList({ branchNotes }: { branchNotes: BranchNotes }) 
         />
       </div>
       <ul className="mx-auto w-full divide-y divide-border">
-        {branchNotes.filter((note) => note.note.title.toLowerCase().includes(search)).map((note) => (
+        {branchNotes.length > 0 && branchNotes.filter((note) => note.note.title.toLowerCase().includes(search)).map((note) => (
           <NoteItem key={note.note.id} noteItem={note} />
-        ))}
+        )) ||
+          <p>No notes available!</p>}
       </ul>
     </>
   )
