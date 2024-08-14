@@ -7,6 +7,7 @@ import { getNotesByUserId } from "@/server/actions/noteSharingActions"
 import { getUserAuth } from "@/server/auth/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 import { FaGoogleDrive } from "react-icons/fa6"
 import { RiLinksFill } from "react-icons/ri"
 import { SiMega } from "react-icons/si"
@@ -15,7 +16,7 @@ export default async function Page() {
   const { session } = await getUserAuth()
 
   if (!session) {
-    return <NotFound />
+    return redirect("/")
   }
 
   const pfp = await getPfpByUserId(session.user.id)

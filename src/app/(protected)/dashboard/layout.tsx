@@ -18,7 +18,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await checkAuth()
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(GeistSans.className, "bg-background")}>

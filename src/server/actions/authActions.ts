@@ -23,7 +23,6 @@ export async function signOutAction(): Promise<ActionResult> {
 
   const sessionCookie = lucia.createBlankSessionCookie();
   setAuthCookie(sessionCookie);
-  console.log("Redirect kar")
   redirect("/")
 }
 
